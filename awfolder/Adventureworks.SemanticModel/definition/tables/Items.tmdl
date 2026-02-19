@@ -1,0 +1,70 @@
+table Items
+	lineageTag: 75a37715-9448-4e53-b0d2-15e9da7a467c
+
+	column Item
+		dataType: string
+		lineageTag: 4b31bde1-516f-4184-94dd-dc54e89fdba1
+		summarizeBy: none
+		sourceColumn: Item
+		sortByColumn: Index
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e0baa2c-7a0e-4762-a390-c9aa3005a68f
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price
+		dataType: double
+		lineageTag: 0cee77a6-7552-4b86-995d-9e24037806a2
+		summarizeBy: sum
+		sourceColumn: Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Number of Items' =
+			
+			COUNTROWS(
+			    FILTER(Items,
+			            Items[Price] > EARLIER(Items[Price])
+			    )
+			)
+		formatString: 0
+		lineageTag: b3c65d33-f9a7-488d-a8e6-88e64ad5287e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Count' =
+			
+			COUNTROWS(
+			    FILTER(Items,
+			        Items[Price] > EARLIER(Items[Price])
+			    )
+			)
+		formatString: 0
+		lineageTag: e4c3859b-3691-4edb-8a3f-f8ab7d133820
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Items = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("Zc67DYAwDEXRVZDrKMIhP4/ADFFKSjr2F34WBVaKm+L4FRmDzue6N6ZAKMUuNMOnCaLlKD89VBAnxxlDsF8XJas6rkpInDaVtmhXsTwLhus/eIfhKc0O8wU=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Item = _t, Index = _t, Price = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Item", type text}, {"Index", Int64.Type}, {"Price", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
