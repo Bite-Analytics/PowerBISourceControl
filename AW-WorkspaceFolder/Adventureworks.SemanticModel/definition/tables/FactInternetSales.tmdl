@@ -1,0 +1,300 @@
+table FactInternetSales
+	lineageTag: f8ecda79-f133-4ad2-b84d-f05826e5b857
+
+	measure 'Sales Amount' = SUM(FactInternetSales[SalesAmount])
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 8d2f3e9b-6820-4370-bcd3-093a0cbf9e00
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Sales Amount Measure' =
+			
+			SUMX(
+			    FactInternetSales,
+			    FactInternetSales[UnitPrice] * FactInternetSales[OrderQuantity]
+			)
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: cf5a91c3-149d-4eb2-811d-abcf6cf94525
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ad419e11-615e-44ae-98f5-b852688c009e
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a556c6db-0470-41ec-8086-d8bb146b6c62
+		summarizeBy: count
+		sourceColumn: OrderDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DueDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5cbefb92-c4b9-45f7-91aa-e22e2a23c2e3
+		summarizeBy: none
+		sourceColumn: DueDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 711ef4a5-16b9-4d36-92a7-fd4bfc5c4bb8
+		summarizeBy: count
+		sourceColumn: ShipDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: dbb98f31-897a-4d77-be26-96ad42ccd27a
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 69d281c5-c0a8-49f9-a631-149c67fb3721
+		summarizeBy: none
+		sourceColumn: PromotionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 838fa49f-8a4f-44b9-b62a-0133e7b85f1d
+		summarizeBy: none
+		sourceColumn: CurrencyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: d7f6f567-c39c-4c0c-9ddb-5ba63fcdc8c7
+		summarizeBy: count
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderNumber
+		dataType: string
+		lineageTag: a8612c8c-eb1c-48ab-a300-5429ee4f2597
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderLineNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: a1656f08-2814-4cec-88b6-d2d3a1248889
+		summarizeBy: sum
+		sourceColumn: SalesOrderLineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevisionNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c0003f2-95c3-47e0-8b2a-33413ba3d1e9
+		summarizeBy: sum
+		sourceColumn: RevisionNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 34be57a2-9562-4130-af4a-9616d83fc6d9
+		summarizeBy: sum
+		sourceColumn: OrderQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: e4b85a9c-6ff3-4251-a30c-85a441e182e7
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column ExtendedAmount
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 6296a9f9-b1a9-44ac-bbf1-d6a44ba966bb
+		summarizeBy: sum
+		sourceColumn: ExtendedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column UnitPriceDiscountPct
+		dataType: double
+		lineageTag: 5daeafd7-10ff-4b3c-b9ce-a88cf3d5b7ce
+		summarizeBy: sum
+		sourceColumn: UnitPriceDiscountPct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DiscountAmount
+		dataType: double
+		lineageTag: 6a9cd155-fb6e-4d3f-911c-35f25b6158ed
+		summarizeBy: sum
+		sourceColumn: DiscountAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProductStandardCost
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: f7c8fc04-3e26-4baf-ba15-d8627138b549
+		summarizeBy: sum
+		sourceColumn: ProductStandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column TotalProductCost
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: d094fb93-6839-4417-9b53-20e44a580e2a
+		summarizeBy: sum
+		sourceColumn: TotalProductCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column SalesAmount
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: aefa7695-acb6-47b1-8ec7-7c716ccaa3c5
+		summarizeBy: sum
+		sourceColumn: SalesAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column TaxAmt
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: c01f3cf0-7271-4123-9fb7-cec80b51c385
+		summarizeBy: sum
+		sourceColumn: TaxAmt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column Freight
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: d376ccda-c7ab-454b-9490-23af18dce4b5
+		summarizeBy: sum
+		sourceColumn: Freight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column CarrierTrackingNumber
+		dataType: string
+		lineageTag: 6ab526fc-80d6-4901-a6b8-98cba30dd956
+		summarizeBy: none
+		sourceColumn: CarrierTrackingNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerPONumber
+		dataType: string
+		lineageTag: 5450d0af-37f1-4d8d-828d-9b5ba8e9bd67
+		summarizeBy: none
+		sourceColumn: CustomerPONumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7f706591-07cf-480a-b9a4-b46d7786ab53
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		variation Variation
+			isDefault
+			relationship: fe9a04c9-227a-4350-a1e7-a2f4a03c1cd3
+			defaultHierarchy: LocalDateTable_4c2b4f00-dcc5-4be0-bf3a-a274e87fdece.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DueDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b34747ff-d203-47e4-8687-60786da106c9
+		summarizeBy: none
+		sourceColumn: DueDate
+
+		variation Variation
+			isDefault
+			relationship: 0f95efde-4e88-49e0-9ec9-d761b5d2506f
+			defaultHierarchy: LocalDateTable_7850a22b-7288-4af1-8baa-fd2fea895745.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1b313bde-c585-4d29-9ae2-48cd25e3ec26
+		summarizeBy: none
+		sourceColumn: ShipDate
+
+		variation Variation
+			isDefault
+			relationship: 966914d8-f207-4d8d-8826-9085d701f5e8
+			defaultHierarchy: LocalDateTable_dd74f2ef-77ec-43a7-8a96-952f20de409f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Amount Col' = FactInternetSales[UnitPrice] * FactInternetSales[OrderQuantity]
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: ee82afce-9584-4852-bf2a-4a41ef0cc9c5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	partition FactInternetSales = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("awdw.database.windows.net", "adventureworksdw"),
+				    dbo_FactInternetSales = Source{[Schema="dbo",Item="FactInternetSales"]}[Data]
+				in
+				    dbo_FactInternetSales
+

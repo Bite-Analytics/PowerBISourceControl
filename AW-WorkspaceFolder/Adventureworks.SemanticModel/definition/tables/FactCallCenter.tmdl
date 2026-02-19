@@ -1,0 +1,142 @@
+table FactCallCenter
+	lineageTag: 9c544eac-5603-4046-9fcc-08fd1aa1c675
+
+	column FactCallCenterID
+		dataType: int64
+		formatString: 0
+		lineageTag: ab5a0b1f-fdfc-44fc-85be-d7656706b587
+		summarizeBy: count
+		sourceColumn: FactCallCenterID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a97eb3d-f9f9-460a-99d6-c576683440ff
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column WageType
+		dataType: string
+		lineageTag: 0ecda3ef-f330-4564-96ed-c41bd20a7020
+		summarizeBy: none
+		sourceColumn: WageType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shift
+		dataType: string
+		lineageTag: 718dc1f4-5f64-46f8-96a4-6dee9abad4e4
+		summarizeBy: none
+		sourceColumn: Shift
+
+		annotation SummarizationSetBy = Automatic
+
+	column LevelOneOperators
+		dataType: int64
+		formatString: 0
+		lineageTag: dc85d408-cc3b-4f86-87e1-b9f907497fd2
+		summarizeBy: sum
+		sourceColumn: LevelOneOperators
+
+		annotation SummarizationSetBy = Automatic
+
+	column LevelTwoOperators
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b4c5f5f-6f33-4665-adaa-d78a3635df7b
+		summarizeBy: sum
+		sourceColumn: LevelTwoOperators
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalOperators
+		dataType: int64
+		formatString: 0
+		lineageTag: 8088649c-bde1-4324-b514-dca479f46497
+		summarizeBy: sum
+		sourceColumn: TotalOperators
+
+		annotation SummarizationSetBy = Automatic
+
+	column Calls
+		dataType: int64
+		formatString: 0
+		lineageTag: 68ab4b56-de91-4762-a461-bfe986d0677e
+		summarizeBy: sum
+		sourceColumn: Calls
+
+		annotation SummarizationSetBy = Automatic
+
+	column AutomaticResponses
+		dataType: int64
+		formatString: 0
+		lineageTag: 3391934b-1219-4c45-9d43-fe785e86ce4d
+		summarizeBy: sum
+		sourceColumn: AutomaticResponses
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orders
+		dataType: int64
+		formatString: 0
+		lineageTag: 64931d66-ec7d-487b-87bd-5ea812b86f8b
+		summarizeBy: sum
+		sourceColumn: Orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column IssuesRaised
+		dataType: int64
+		formatString: 0
+		lineageTag: 23ca6ec7-fd7d-4da9-a671-175e640e9f6e
+		summarizeBy: sum
+		sourceColumn: IssuesRaised
+
+		annotation SummarizationSetBy = Automatic
+
+	column AverageTimePerIssue
+		dataType: int64
+		formatString: 0
+		lineageTag: 82610362-5cda-4535-b0b7-a2d7679a83dd
+		summarizeBy: sum
+		sourceColumn: AverageTimePerIssue
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceGrade
+		dataType: double
+		lineageTag: 630eead0-64fc-4e0b-9346-4faf2ee501b0
+		summarizeBy: sum
+		sourceColumn: ServiceGrade
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4d317b8f-a8e0-46ee-8d30-4230e68b354f
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: e638690c-c5fd-4063-842a-739cf9bdac07
+			defaultHierarchy: LocalDateTable_0be1953a-030f-4b87-9ad7-7fd4cae54dec.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactCallCenter = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("awdw.database.windows.net", "adventureworksdw"),
+				    dbo_FactCallCenter = Source{[Schema="dbo",Item="FactCallCenter"]}[Data]
+				in
+				    dbo_FactCallCenter
+

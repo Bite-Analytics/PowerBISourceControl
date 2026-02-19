@@ -1,0 +1,102 @@
+table DimGeography
+	lineageTag: 83a91cff-48e2-41f2-a624-9c7f90a61d2b
+
+	column GeographyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 53bf3810-1400-4b23-9560-9e40d5d6d591
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 1ae1f44d-f5a3-42cf-9c09-1c745551b4d8
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvinceCode
+		dataType: string
+		lineageTag: 83309c32-1880-48e9-9ee9-399af78942df
+		summarizeBy: none
+		sourceColumn: StateProvinceCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvinceName
+		dataType: string
+		lineageTag: cccea2c9-5b24-49a8-8448-c5308441b29f
+		summarizeBy: none
+		sourceColumn: StateProvinceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegionCode
+		dataType: string
+		lineageTag: 9da59a74-6861-4094-b980-d250301bcf31
+		summarizeBy: none
+		sourceColumn: CountryRegionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishCountryRegionName
+		dataType: string
+		lineageTag: 580fb109-2407-4920-95de-a0b82e4b6091
+		summarizeBy: none
+		sourceColumn: EnglishCountryRegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpanishCountryRegionName
+		dataType: string
+		lineageTag: 0c4bdf10-2277-4e26-9c5c-69e1523932db
+		summarizeBy: none
+		sourceColumn: SpanishCountryRegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FrenchCountryRegionName
+		dataType: string
+		lineageTag: 51a2cc18-c7c1-4327-93e4-2c738adad72c
+		summarizeBy: none
+		sourceColumn: FrenchCountryRegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: 9459d01a-d0d8-4a40-abf4-44bf02a9c34f
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8550b097-1b80-49eb-8de7-8b629518a824
+		summarizeBy: none
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IpAddressLocator
+		dataType: string
+		lineageTag: f22c59bb-5271-4ceb-856c-91a66b540a18
+		summarizeBy: none
+		sourceColumn: IpAddressLocator
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimGeography = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("awdw.database.windows.net", "adventureworksdw"),
+				    dbo_DimGeography = Source{[Schema="dbo",Item="DimGeography"]}[Data]
+				in
+				    dbo_DimGeography
+

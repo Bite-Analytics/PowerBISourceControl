@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "92608429eb94e06cf7fa",
+  "position": {
+    "x": 850.35856573705178,
+    "y": 84.143426294820713,
+    "z": 1,
+    "height": 374.82071713147405,
+    "width": 346.77290836653384,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimDepartmentGroup"
+                    }
+                  },
+                  "Property": "DepartmentGroupName"
+                }
+              },
+              "queryRef": "DimDepartmentGroup.DepartmentGroupName",
+              "nativeQueryRef": "DepartmentGroupName",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactInternetSales"
+                    }
+                  },
+                  "Property": "Sales Amount Measure"
+                }
+              },
+              "queryRef": "FactInternetSales.Sales Amount Measure",
+              "nativeQueryRef": "Sales Amount Measure"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FactInternetSales"
+                  }
+                },
+                "Property": "Sales Amount Measure"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
