@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "3219958edd20803d1577",
+  "position": {
+    "x": 445.25780682643432,
+    "y": 58.562091503267979,
+    "z": 1000,
+    "height": 538.21350762527243,
+    "width": 477.79230210602765,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Group By Table"
+                    }
+                  },
+                  "Property": "ProductKey"
+                }
+              },
+              "queryRef": "Group By Table.ProductKey",
+              "nativeQueryRef": "Count of ProductKey",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Group By Table"
+                    }
+                  },
+                  "Property": "City"
+                }
+              },
+              "queryRef": "Group By Table.City",
+              "nativeQueryRef": "City",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Group By Table"
+                        }
+                      },
+                      "Property": "Sales Amount"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Group By Table.Sales Amount)",
+              "nativeQueryRef": "Sum of Sales Amount"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

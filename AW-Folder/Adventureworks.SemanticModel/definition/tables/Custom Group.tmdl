@@ -1,0 +1,87 @@
+table 'Custom Group'
+	lineageTag: a28963bf-2a3e-49bc-a824-dc919f5a3a3d
+
+	measure 'Custom Value' = ```
+			
+			
+			VAR FranceValue = CALCULATE(FactInternetSales[Sales Amount], DimSalesTerritory[SalesTerritoryRegion] = "France")
+			VAR GermanyValue = CALCULATE(FactInternetSales[Sales Amount], DimSalesTerritory[SalesTerritoryRegion] = "Germany")
+			VAR CanadaValue = CALCULATE(FactInternetSales[Sales Amount], DimSalesTerritory[SalesTerritoryRegion] = "Canada")
+			VAR UKValue = CALCULATE(FactInternetSales[Sales Amount], DimSalesTerritory[SalesTerritoryRegion] = "United Kingdom")
+			
+			RETURN
+			SWITCH(SELECTEDVALUE('Custom Group'[Country]),
+			    "France", FranceValue,
+			    "Germany", GermanyValue,
+			    "Sub Total 1", FranceValue + GermanyValue,
+			    "Canada", CanadaValue,
+			    "United Kingdom", UKValue,
+			    "Sub Total 2", CanadaValue + UKValue, 
+			    FranceValue + GermanyValue + CanadaValue + UKValue
+			)
+			```
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 48bd80c7-2cf9-4622-8529-c1f0dd9aeed0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Selected TopN' = SELECTEDVALUE('TopN Selector'[TopN])
+		formatString: 0
+		lineageTag: 9660fb67-bfcc-496c-bd8e-dbba5003260e
+
+	measure ProductRank =
+			
+			RANKX(ALLSELECTED(DimProduct[EnglishProductName]),
+			[Sales Amount],
+			,
+			DESC
+			)
+		formatString: 0
+		lineageTag: 4d76f06d-abbc-4a62-94f5-e1083bd420ae
+
+	measure 'TopN Sales' =
+			
+			IF([ProductRank] <= [Selected TopN],
+			FactInternetSales[Sales Amount]
+			)
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 11148532-d517-427f-b60e-8cbe953b9def
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Dynamic Title' =
+			
+			"Top " & [Selected TopN] & " Products by Sales"
+		lineageTag: ff66c8ba-4262-4fc6-82bf-622f4b9ebe0f
+
+	column Country
+		dataType: string
+		lineageTag: 11c4bc34-25f4-4407-9776-d3e6ddee6de5
+		summarizeBy: none
+		sourceColumn: Country
+		sortByColumn: Index
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: 37dc6762-4d44-4b2c-952b-46a74df393ef
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Custom Group' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcitKzEtOVdJRMlSK1YlWck8tyk3MqwTyjcD84NIkhZD8ksQcBUOgmDFYzDkxLzElEcg1AXND8zJLUlMUvDPz0lPyc4HCpmg6jYBiZkqxsQA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Country = _t, Index = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Country", type text}, {"Index", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

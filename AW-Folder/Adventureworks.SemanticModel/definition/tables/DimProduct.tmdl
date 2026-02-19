@@ -1,0 +1,894 @@
+table DimProduct
+	lineageTag: 938208f0-f6b3-4181-a759-6c2bdbadcf60
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: f0cf1000-cc5b-4e9f-a908-d6d467a8cec0
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DimProduct","TableItemName":"ProductKey (groups)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column ProductAlternateKey
+		dataType: string
+		lineageTag: 23db3c0a-24e9-4c45-bfd6-65a000531d2a
+		summarizeBy: none
+		sourceColumn: ProductAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b1a1767-80ef-4731-9cd3-e32d5241b7fa
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeightUnitMeasureCode
+		dataType: string
+		lineageTag: e6f0cca4-dc45-4e6c-897f-aa0fa5d9bdca
+		summarizeBy: none
+		sourceColumn: WeightUnitMeasureCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column SizeUnitMeasureCode
+		dataType: string
+		lineageTag: db985618-c9e0-478d-a7c0-dc86bb1d28a0
+		summarizeBy: none
+		sourceColumn: SizeUnitMeasureCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishProductName
+		dataType: string
+		lineageTag: 805ae4b3-ceab-4c8b-b39f-bb6e4f032544
+		summarizeBy: none
+		sourceColumn: EnglishProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpanishProductName
+		dataType: string
+		lineageTag: 58053d30-bf8a-4209-8034-1cf18871afee
+		summarizeBy: none
+		sourceColumn: SpanishProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FrenchProductName
+		dataType: string
+		lineageTag: 990d4b5a-dd12-4ffa-8f24-e29e51e6807a
+		summarizeBy: none
+		sourceColumn: FrenchProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StandardCost
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 700d6736-2e75-481b-9320-fa63523f607b
+		summarizeBy: sum
+		sourceColumn: StandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column FinishedGoodsFlag
+		dataType: string
+		lineageTag: 6f23ecd7-50fc-4d44-af72-4beb6d19ebc5
+		summarizeBy: none
+		sourceColumn: FinishedGoodsFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 363c6db4-5270-4e14-886e-27d99dea7380
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column SafetyStockLevel
+		dataType: int64
+		formatString: 0
+		lineageTag: b63f3112-8bf2-4e99-9b87-8cf2b7e38199
+		summarizeBy: sum
+		sourceColumn: SafetyStockLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReorderPoint
+		dataType: int64
+		formatString: 0
+		lineageTag: da924149-fedc-4ffe-bf8a-50a6b928061f
+		summarizeBy: sum
+		sourceColumn: ReorderPoint
+
+		annotation SummarizationSetBy = Automatic
+
+	column ListPrice
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 4823ec39-46b0-4f1b-b3fb-184991db2202
+		summarizeBy: sum
+		sourceColumn: ListPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column Size
+		dataType: string
+		lineageTag: 7d2b247c-236a-4716-b2e7-43bbc1f8587c
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column SizeRange
+		dataType: string
+		lineageTag: c0692f44-4d91-48ca-97a7-3cee62d417ac
+		summarizeBy: none
+		sourceColumn: SizeRange
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: double
+		lineageTag: 8648124b-8fa3-4cec-ad3f-1bed10de02f3
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DaysToManufacture
+		dataType: int64
+		formatString: 0
+		lineageTag: cf55eab6-a874-4b6e-bd26-e80ecc875149
+		summarizeBy: sum
+		sourceColumn: DaysToManufacture
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductLine
+		dataType: string
+		lineageTag: f9801d30-715e-46ae-9b95-f5ee2807c01f
+		summarizeBy: none
+		sourceColumn: ProductLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column DealerPrice
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 6009bd2a-e731-4f2a-a82a-bb5aaca9b735
+		summarizeBy: sum
+		sourceColumn: DealerPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column Class
+		dataType: string
+		lineageTag: c23a9ff6-84d1-4ab2-aad0-87728a7e5450
+		summarizeBy: none
+		sourceColumn: Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column Style
+		dataType: string
+		lineageTag: c09fb12c-4ac6-4d32-b892-ce5c5e4ef4a2
+		summarizeBy: none
+		sourceColumn: Style
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModelName
+		dataType: string
+		lineageTag: 85bb2fa6-5ef9-48d5-aeab-3d4bd8e92583
+		summarizeBy: none
+		sourceColumn: ModelName
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishDescription
+		dataType: string
+		lineageTag: a25bb64b-a855-4e5d-99c1-fa8a408144f8
+		summarizeBy: none
+		sourceColumn: EnglishDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column FrenchDescription
+		dataType: string
+		lineageTag: 0a2120fc-00c5-4993-b0bf-db46810fe98d
+		summarizeBy: none
+		sourceColumn: FrenchDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChineseDescription
+		dataType: string
+		lineageTag: 9a25928f-7164-4d1a-a5b5-bec8d2b1461e
+		summarizeBy: none
+		sourceColumn: ChineseDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ArabicDescription
+		dataType: string
+		lineageTag: cde2cdb3-bbfb-4797-a6cc-a18ddb45630b
+		summarizeBy: none
+		sourceColumn: ArabicDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column HebrewDescription
+		dataType: string
+		lineageTag: bfbae145-4181-4c4d-bc45-1bf813145801
+		summarizeBy: none
+		sourceColumn: HebrewDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ThaiDescription
+		dataType: string
+		lineageTag: 2998efe1-1a88-4dc5-af72-7f7fbf544ff0
+		summarizeBy: none
+		sourceColumn: ThaiDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column GermanDescription
+		dataType: string
+		lineageTag: cb1b3911-c575-4733-981d-d9534053ecd0
+		summarizeBy: none
+		sourceColumn: GermanDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column JapaneseDescription
+		dataType: string
+		lineageTag: 7963e158-7f25-4a12-90e4-08ae21a41e22
+		summarizeBy: none
+		sourceColumn: JapaneseDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column TurkishDescription
+		dataType: string
+		lineageTag: 5c748f92-e2a5-44ec-9254-0e17fd96d730
+		summarizeBy: none
+		sourceColumn: TurkishDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 64a83b54-df6a-407b-a59b-345495c36564
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: 15b48f18-ee09-4dca-b55b-c286d8e32f4c
+			defaultHierarchy: LocalDateTable_503cb443-653f-4cd0-8654-7ea436b55ec1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2b7b8e35-73a9-469d-b6ec-6156645c7a3d
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: 42ef55d0-68a4-4564-9607-4e3fd1ec4b07
+			defaultHierarchy: LocalDateTable_ce118c0a-b81a-4482-8d9f-36faf50588b9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: c19e1dfe-0f73-483d-a5f3-9eed2d7a599d
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ProductKey (groups)' =
+			SWITCH(
+				TRUE,
+				ISBLANK('DimProduct'[ProductKey]),
+				"(Blank)",
+				'DimProduct'[ProductKey] IN {1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26,
+					27,
+					28,
+					29,
+					30,
+					31,
+					32,
+					33,
+					34,
+					35,
+					36,
+					37,
+					38,
+					39,
+					40,
+					41,
+					42,
+					43,
+					44,
+					45,
+					46,
+					47,
+					48,
+					49,
+					50,
+					51,
+					52,
+					53,
+					54,
+					55,
+					56,
+					57,
+					58,
+					59,
+					60,
+					61,
+					62,
+					63,
+					64,
+					65,
+					66,
+					67,
+					68,
+					69,
+					70,
+					71,
+					72,
+					73,
+					74,
+					75,
+					76,
+					77,
+					78,
+					79,
+					80,
+					81,
+					82,
+					83,
+					84,
+					85,
+					86,
+					87,
+					88,
+					89,
+					90,
+					91,
+					92,
+					93,
+					94,
+					95,
+					96,
+					97,
+					98,
+					99,
+					100,
+					101,
+					102,
+					103,
+					104,
+					105,
+					106,
+					107,
+					108,
+					109,
+					110,
+					111,
+					112,
+					113,
+					114,
+					115,
+					116,
+					117,
+					118,
+					119,
+					120,
+					121,
+					122,
+					123,
+					124,
+					125,
+					126,
+					127,
+					128,
+					129,
+					130,
+					131,
+					132,
+					133,
+					134,
+					135,
+					136,
+					137,
+					138,
+					139,
+					140,
+					141,
+					142,
+					143,
+					144,
+					145,
+					146,
+					147,
+					148,
+					149,
+					150,
+					151,
+					152,
+					153,
+					154,
+					155,
+					156,
+					157,
+					158,
+					159,
+					160,
+					161,
+					162,
+					163,
+					164,
+					165,
+					166,
+					167,
+					168,
+					169,
+					170,
+					171,
+					172,
+					173,
+					174,
+					175,
+					176,
+					177,
+					178,
+					179,
+					180,
+					181,
+					182,
+					183,
+					184,
+					185,
+					186,
+					187,
+					188,
+					189,
+					190,
+					191,
+					192,
+					193,
+					194,
+					195,
+					196,
+					197,
+					198,
+					199,
+					200,
+					201,
+					202,
+					203,
+					204,
+					205,
+					206,
+					207,
+					208,
+					209,
+					210,
+					211,
+					212,
+					213,
+					214,
+					215,
+					216,
+					217,
+					218,
+					219,
+					220,
+					221,
+					222,
+					223,
+					224,
+					225,
+					226,
+					227,
+					228,
+					229,
+					230,
+					231,
+					232,
+					233,
+					234,
+					235,
+					236,
+					237,
+					238,
+					239,
+					240,
+					241,
+					242,
+					243,
+					244,
+					245,
+					246,
+					247,
+					248,
+					249,
+					250,
+					251,
+					252,
+					253,
+					254,
+					255,
+					256,
+					257,
+					258,
+					259,
+					260,
+					261,
+					262,
+					263,
+					264,
+					265,
+					266,
+					267,
+					268,
+					269,
+					270,
+					271,
+					272,
+					273,
+					274,
+					275,
+					276,
+					277,
+					278,
+					279,
+					280,
+					281,
+					282,
+					283,
+					284,
+					285,
+					286,
+					287,
+					288,
+					289,
+					290,
+					291,
+					292,
+					293,
+					294,
+					295,
+					296,
+					297,
+					298,
+					299,
+					300,
+					301,
+					302,
+					303,
+					304,
+					305,
+					306,
+					307,
+					308,
+					309,
+					310,
+					311,
+					312,
+					313,
+					314,
+					315,
+					316,
+					317,
+					318,
+					319,
+					320,
+					321,
+					322,
+					323,
+					324,
+					325,
+					326,
+					327,
+					328,
+					329,
+					330,
+					331,
+					332,
+					333,
+					334,
+					335,
+					336,
+					337,
+					338,
+					339,
+					340,
+					341,
+					342,
+					343,
+					344,
+					345},
+				"Product Group 1",
+				'DimProduct'[ProductKey] IN {346,
+					347,
+					348,
+					349,
+					350,
+					351,
+					352,
+					353,
+					354,
+					355,
+					356,
+					357,
+					358,
+					359,
+					360,
+					361,
+					362,
+					363,
+					364,
+					365,
+					366,
+					367,
+					368,
+					369,
+					370,
+					371,
+					372,
+					373,
+					374,
+					375,
+					376,
+					377,
+					378,
+					379,
+					380,
+					381,
+					382,
+					383,
+					384,
+					385,
+					386,
+					387,
+					388,
+					389,
+					390,
+					391,
+					392,
+					393,
+					394,
+					395,
+					396,
+					397,
+					398,
+					399,
+					400,
+					401,
+					402,
+					403,
+					404,
+					405,
+					406,
+					407,
+					408,
+					409,
+					410,
+					411,
+					412,
+					413,
+					414,
+					415,
+					416,
+					417,
+					418,
+					419,
+					420,
+					421,
+					422,
+					423,
+					424,
+					425,
+					426,
+					427,
+					428,
+					429,
+					430,
+					431,
+					432,
+					433,
+					434,
+					435,
+					436,
+					437,
+					438,
+					439,
+					440,
+					441,
+					442,
+					443,
+					444,
+					445,
+					446,
+					447,
+					448,
+					449,
+					450,
+					451,
+					452,
+					453,
+					454,
+					455,
+					456,
+					457,
+					458,
+					459,
+					460,
+					461,
+					462,
+					463,
+					464,
+					465,
+					466,
+					467,
+					468,
+					469,
+					470,
+					471,
+					472,
+					473,
+					474,
+					475,
+					476,
+					477,
+					478,
+					479,
+					480,
+					481,
+					482,
+					483,
+					484,
+					485,
+					486,
+					487,
+					488,
+					489,
+					490,
+					491,
+					492,
+					493,
+					494,
+					495,
+					496,
+					497,
+					498,
+					499,
+					500,
+					501,
+					502,
+					503,
+					504,
+					505,
+					506,
+					507,
+					508,
+					509,
+					510,
+					511,
+					512,
+					513,
+					514,
+					515,
+					516,
+					517,
+					518,
+					519,
+					520,
+					521,
+					522,
+					523,
+					524,
+					525,
+					526,
+					527,
+					528,
+					529,
+					530,
+					531,
+					532,
+					533,
+					534,
+					535,
+					536,
+					537,
+					538},
+				"Product Group 2",
+				"Other"
+			)
+		formatString: 0
+		lineageTag: 7df3f7ce-5e7c-41c2-a714-7118604513a7
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "DimProduct"
+				          }
+				        },
+				        "Property": "ProductKey"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"d","Entity":"DimProduct"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"ProductKey"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"Product Group 1","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"ProductKey"}}],"Values":[[{"Literal":{"Value":"1L"}}],[{"Literal":{"Value":"2L"}}],[{"Literal":{"Value":"3L"}}],[{"Literal":{"Value":"4L"}}],[{"Literal":{"Value":"5L"}}],[{"Literal":{"Value":"6L"}}],[{"Literal":{"Value":"7L"}}],[{"Literal":{"Value":"8L"}}],[{"Literal":{"Value":"9L"}}],[{"Literal":{"Value":"10L"}}],[{"Literal":{"Value":"11L"}}],[{"Literal":{"Value":"12L"}}],[{"Literal":{"Value":"13L"}}],[{"Literal":{"Value":"14L"}}],[{"Literal":{"Value":"15L"}}],[{"Literal":{"Value":"16L"}}],[{"Literal":{"Value":"17L"}}],[{"Literal":{"Value":"18L"}}],[{"Literal":{"Value":"19L"}}],[{"Literal":{"Value":"20L"}}],[{"Literal":{"Value":"21L"}}],[{"Literal":{"Value":"22L"}}],[{"Literal":{"Value":"23L"}}],[{"Literal":{"Value":"24L"}}],[{"Literal":{"Value":"25L"}}],[{"Literal":{"Value":"26L"}}],[{"Literal":{"Value":"27L"}}],[{"Literal":{"Value":"28L"}}],[{"Literal":{"Value":"29L"}}],[{"Literal":{"Value":"30L"}}],[{"Literal":{"Value":"31L"}}],[{"Literal":{"Value":"32L"}}],[{"Literal":{"Value":"33L"}}],[{"Literal":{"Value":"34L"}}],[{"Literal":{"Value":"35L"}}],[{"Literal":{"Value":"36L"}}],[{"Literal":{"Value":"37L"}}],[{"Literal":{"Value":"38L"}}],[{"Literal":{"Value":"39L"}}],[{"Literal":{"Value":"40L"}}],[{"Literal":{"Value":"41L"}}],[{"Literal":{"Value":"42L"}}],[{"Literal":{"Value":"43L"}}],[{"Literal":{"Value":"44L"}}],[{"Literal":{"Value":"45L"}}],[{"Literal":{"Value":"46L"}}],[{"Literal":{"Value":"47L"}}],[{"Literal":{"Value":"48L"}}],[{"Literal":{"Value":"49L"}}],[{"Literal":{"Value":"50L"}}],[{"Literal":{"Value":"51L"}}],[{"Literal":{"Value":"52L"}}],[{"Literal":{"Value":"53L"}}],[{"Literal":{"Value":"54L"}}],[{"Literal":{"Value":"55L"}}],[{"Literal":{"Value":"56L"}}],[{"Literal":{"Value":"57L"}}],[{"Literal":{"Value":"58L"}}],[{"Literal":{"Value":"59L"}}],[{"Literal":{"Value":"60L"}}],[{"Literal":{"Value":"61L"}}],[{"Literal":{"Value":"62L"}}],[{"Literal":{"Value":"63L"}}],[{"Literal":{"Value":"64L"}}],[{"Literal":{"Value":"65L"}}],[{"Literal":{"Value":"66L"}}],[{"Literal":{"Value":"67L"}}],[{"Literal":{"Value":"68L"}}],[{"Literal":{"Value":"69L"}}],[{"Literal":{"Value":"70L"}}],[{"Literal":{"Value":"71L"}}],[{"Literal":{"Value":"72L"}}],[{"Literal":{"Value":"73L"}}],[{"Literal":{"Value":"74L"}}],[{"Literal":{"Value":"75L"}}],[{"Literal":{"Value":"76L"}}],[{"Literal":{"Value":"77L"}}],[{"Literal":{"Value":"78L"}}],[{"Literal":{"Value":"79L"}}],[{"Literal":{"Value":"80L"}}],[{"Literal":{"Value":"81L"}}],[{"Literal":{"Value":"82L"}}],[{"Literal":{"Value":"83L"}}],[{"Literal":{"Value":"84L"}}],[{"Literal":{"Value":"85L"}}],[{"Literal":{"Value":"86L"}}],[{"Literal":{"Value":"87L"}}],[{"Literal":{"Value":"88L"}}],[{"Literal":{"Value":"89L"}}],[{"Literal":{"Value":"90L"}}],[{"Literal":{"Value":"91L"}}],[{"Literal":{"Value":"92L"}}],[{"Literal":{"Value":"93L"}}],[{"Literal":{"Value":"94L"}}],[{"Literal":{"Value":"95L"}}],[{"Literal":{"Value":"96L"}}],[{"Literal":{"Value":"97L"}}],[{"Literal":{"Value":"98L"}}],[{"Literal":{"Value":"99L"}}],[{"Literal":{"Value":"100L"}}],[{"Literal":{"Value":"101L"}}],[{"Literal":{"Value":"102L"}}],[{"Literal":{"Value":"103L"}}],[{"Literal":{"Value":"104L"}}],[{"Literal":{"Value":"105L"}}],[{"Literal":{"Value":"106L"}}],[{"Literal":{"Value":"107L"}}],[{"Literal":{"Value":"108L"}}],[{"Literal":{"Value":"109L"}}],[{"Literal":{"Value":"110L"}}],[{"Literal":{"Value":"111L"}}],[{"Literal":{"Value":"112L"}}],[{"Literal":{"Value":"113L"}}],[{"Literal":{"Value":"114L"}}],[{"Literal":{"Value":"115L"}}],[{"Literal":{"Value":"116L"}}],[{"Literal":{"Value":"117L"}}],[{"Literal":{"Value":"118L"}}],[{"Literal":{"Value":"119L"}}],[{"Literal":{"Value":"120L"}}],[{"Literal":{"Value":"121L"}}],[{"Literal":{"Value":"122L"}}],[{"Literal":{"Value":"123L"}}],[{"Literal":{"Value":"124L"}}],[{"Literal":{"Value":"125L"}}],[{"Literal":{"Value":"126L"}}],[{"Literal":{"Value":"127L"}}],[{"Literal":{"Value":"128L"}}],[{"Literal":{"Value":"129L"}}],[{"Literal":{"Value":"130L"}}],[{"Literal":{"Value":"131L"}}],[{"Literal":{"Value":"132L"}}],[{"Literal":{"Value":"133L"}}],[{"Literal":{"Value":"134L"}}],[{"Literal":{"Value":"135L"}}],[{"Literal":{"Value":"136L"}}],[{"Literal":{"Value":"137L"}}],[{"Literal":{"Value":"138L"}}],[{"Literal":{"Value":"139L"}}],[{"Literal":{"Value":"140L"}}],[{"Literal":{"Value":"141L"}}],[{"Literal":{"Value":"142L"}}],[{"Literal":{"Value":"143L"}}],[{"Literal":{"Value":"144L"}}],[{"Literal":{"Value":"145L"}}],[{"Literal":{"Value":"146L"}}],[{"Literal":{"Value":"147L"}}],[{"Literal":{"Value":"148L"}}],[{"Literal":{"Value":"149L"}}],[{"Literal":{"Value":"150L"}}],[{"Literal":{"Value":"151L"}}],[{"Literal":{"Value":"152L"}}],[{"Literal":{"Value":"153L"}}],[{"Literal":{"Value":"154L"}}],[{"Literal":{"Value":"155L"}}],[{"Literal":{"Value":"156L"}}],[{"Literal":{"Value":"157L"}}],[{"Literal":{"Value":"158L"}}],[{"Literal":{"Value":"159L"}}],[{"Literal":{"Value":"160L"}}],[{"Literal":{"Value":"161L"}}],[{"Literal":{"Value":"162L"}}],[{"Literal":{"Value":"163L"}}],[{"Literal":{"Value":"164L"}}],[{"Literal":{"Value":"165L"}}],[{"Literal":{"Value":"166L"}}],[{"Literal":{"Value":"167L"}}],[{"Literal":{"Value":"168L"}}],[{"Literal":{"Value":"169L"}}],[{"Literal":{"Value":"170L"}}],[{"Literal":{"Value":"171L"}}],[{"Literal":{"Value":"172L"}}],[{"Literal":{"Value":"173L"}}],[{"Literal":{"Value":"174L"}}],[{"Literal":{"Value":"175L"}}],[{"Literal":{"Value":"176L"}}],[{"Literal":{"Value":"177L"}}],[{"Literal":{"Value":"178L"}}],[{"Literal":{"Value":"179L"}}],[{"Literal":{"Value":"180L"}}],[{"Literal":{"Value":"181L"}}],[{"Literal":{"Value":"182L"}}],[{"Literal":{"Value":"183L"}}],[{"Literal":{"Value":"184L"}}],[{"Literal":{"Value":"185L"}}],[{"Literal":{"Value":"186L"}}],[{"Literal":{"Value":"187L"}}],[{"Literal":{"Value":"188L"}}],[{"Literal":{"Value":"189L"}}],[{"Literal":{"Value":"190L"}}],[{"Literal":{"Value":"191L"}}],[{"Literal":{"Value":"192L"}}],[{"Literal":{"Value":"193L"}}],[{"Literal":{"Value":"194L"}}],[{"Literal":{"Value":"195L"}}],[{"Literal":{"Value":"196L"}}],[{"Literal":{"Value":"197L"}}],[{"Literal":{"Value":"198L"}}],[{"Literal":{"Value":"199L"}}],[{"Literal":{"Value":"200L"}}],[{"Literal":{"Value":"201L"}}],[{"Literal":{"Value":"202L"}}],[{"Literal":{"Value":"203L"}}],[{"Literal":{"Value":"204L"}}],[{"Literal":{"Value":"205L"}}],[{"Literal":{"Value":"206L"}}],[{"Literal":{"Value":"207L"}}],[{"Literal":{"Value":"208L"}}],[{"Literal":{"Value":"209L"}}],[{"Literal":{"Value":"210L"}}],[{"Literal":{"Value":"211L"}}],[{"Literal":{"Value":"212L"}}],[{"Literal":{"Value":"213L"}}],[{"Literal":{"Value":"214L"}}],[{"Literal":{"Value":"215L"}}],[{"Literal":{"Value":"216L"}}],[{"Literal":{"Value":"217L"}}],[{"Literal":{"Value":"218L"}}],[{"Literal":{"Value":"219L"}}],[{"Literal":{"Value":"220L"}}],[{"Literal":{"Value":"221L"}}],[{"Literal":{"Value":"222L"}}],[{"Literal":{"Value":"223L"}}],[{"Literal":{"Value":"224L"}}],[{"Literal":{"Value":"225L"}}],[{"Literal":{"Value":"226L"}}],[{"Literal":{"Value":"227L"}}],[{"Literal":{"Value":"228L"}}],[{"Literal":{"Value":"229L"}}],[{"Literal":{"Value":"230L"}}],[{"Literal":{"Value":"231L"}}],[{"Literal":{"Value":"232L"}}],[{"Literal":{"Value":"233L"}}],[{"Literal":{"Value":"234L"}}],[{"Literal":{"Value":"235L"}}],[{"Literal":{"Value":"236L"}}],[{"Literal":{"Value":"237L"}}],[{"Literal":{"Value":"238L"}}],[{"Literal":{"Value":"239L"}}],[{"Literal":{"Value":"240L"}}],[{"Literal":{"Value":"241L"}}],[{"Literal":{"Value":"242L"}}],[{"Literal":{"Value":"243L"}}],[{"Literal":{"Value":"244L"}}],[{"Literal":{"Value":"245L"}}],[{"Literal":{"Value":"246L"}}],[{"Literal":{"Value":"247L"}}],[{"Literal":{"Value":"248L"}}],[{"Literal":{"Value":"249L"}}],[{"Literal":{"Value":"250L"}}],[{"Literal":{"Value":"251L"}}],[{"Literal":{"Value":"252L"}}],[{"Literal":{"Value":"253L"}}],[{"Literal":{"Value":"254L"}}],[{"Literal":{"Value":"255L"}}],[{"Literal":{"Value":"256L"}}],[{"Literal":{"Value":"257L"}}],[{"Literal":{"Value":"258L"}}],[{"Literal":{"Value":"259L"}}],[{"Literal":{"Value":"260L"}}],[{"Literal":{"Value":"261L"}}],[{"Literal":{"Value":"262L"}}],[{"Literal":{"Value":"263L"}}],[{"Literal":{"Value":"264L"}}],[{"Literal":{"Value":"265L"}}],[{"Literal":{"Value":"266L"}}],[{"Literal":{"Value":"267L"}}],[{"Literal":{"Value":"268L"}}],[{"Literal":{"Value":"269L"}}],[{"Literal":{"Value":"270L"}}],[{"Literal":{"Value":"271L"}}],[{"Literal":{"Value":"272L"}}],[{"Literal":{"Value":"273L"}}],[{"Literal":{"Value":"274L"}}],[{"Literal":{"Value":"275L"}}],[{"Literal":{"Value":"276L"}}],[{"Literal":{"Value":"277L"}}],[{"Literal":{"Value":"278L"}}],[{"Literal":{"Value":"279L"}}],[{"Literal":{"Value":"280L"}}],[{"Literal":{"Value":"281L"}}],[{"Literal":{"Value":"282L"}}],[{"Literal":{"Value":"283L"}}],[{"Literal":{"Value":"284L"}}],[{"Literal":{"Value":"285L"}}],[{"Literal":{"Value":"286L"}}],[{"Literal":{"Value":"287L"}}],[{"Literal":{"Value":"288L"}}],[{"Literal":{"Value":"289L"}}],[{"Literal":{"Value":"290L"}}],[{"Literal":{"Value":"291L"}}],[{"Literal":{"Value":"292L"}}],[{"Literal":{"Value":"293L"}}],[{"Literal":{"Value":"294L"}}],[{"Literal":{"Value":"295L"}}],[{"Literal":{"Value":"296L"}}],[{"Literal":{"Value":"297L"}}],[{"Literal":{"Value":"298L"}}],[{"Literal":{"Value":"299L"}}],[{"Literal":{"Value":"300L"}}],[{"Literal":{"Value":"301L"}}],[{"Literal":{"Value":"302L"}}],[{"Literal":{"Value":"303L"}}],[{"Literal":{"Value":"304L"}}],[{"Literal":{"Value":"305L"}}],[{"Literal":{"Value":"306L"}}],[{"Literal":{"Value":"307L"}}],[{"Literal":{"Value":"308L"}}],[{"Literal":{"Value":"309L"}}],[{"Literal":{"Value":"310L"}}],[{"Literal":{"Value":"311L"}}],[{"Literal":{"Value":"312L"}}],[{"Literal":{"Value":"313L"}}],[{"Literal":{"Value":"314L"}}],[{"Literal":{"Value":"315L"}}],[{"Literal":{"Value":"316L"}}],[{"Literal":{"Value":"317L"}}],[{"Literal":{"Value":"318L"}}],[{"Literal":{"Value":"319L"}}],[{"Literal":{"Value":"320L"}}],[{"Literal":{"Value":"321L"}}],[{"Literal":{"Value":"322L"}}],[{"Literal":{"Value":"323L"}}],[{"Literal":{"Value":"324L"}}],[{"Literal":{"Value":"325L"}}],[{"Literal":{"Value":"326L"}}],[{"Literal":{"Value":"327L"}}],[{"Literal":{"Value":"328L"}}],[{"Literal":{"Value":"329L"}}],[{"Literal":{"Value":"330L"}}],[{"Literal":{"Value":"331L"}}],[{"Literal":{"Value":"332L"}}],[{"Literal":{"Value":"333L"}}],[{"Literal":{"Value":"334L"}}],[{"Literal":{"Value":"335L"}}],[{"Literal":{"Value":"336L"}}],[{"Literal":{"Value":"337L"}}],[{"Literal":{"Value":"338L"}}],[{"Literal":{"Value":"339L"}}],[{"Literal":{"Value":"340L"}}],[{"Literal":{"Value":"341L"}}],[{"Literal":{"Value":"342L"}}],[{"Literal":{"Value":"343L"}}],[{"Literal":{"Value":"344L"}}],[{"Literal":{"Value":"345L"}}]]}}},{"DisplayName":"Product Group 2","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"ProductKey"}}],"Values":[[{"Literal":{"Value":"346L"}}],[{"Literal":{"Value":"347L"}}],[{"Literal":{"Value":"348L"}}],[{"Literal":{"Value":"349L"}}],[{"Literal":{"Value":"350L"}}],[{"Literal":{"Value":"351L"}}],[{"Literal":{"Value":"352L"}}],[{"Literal":{"Value":"353L"}}],[{"Literal":{"Value":"354L"}}],[{"Literal":{"Value":"355L"}}],[{"Literal":{"Value":"356L"}}],[{"Literal":{"Value":"357L"}}],[{"Literal":{"Value":"358L"}}],[{"Literal":{"Value":"359L"}}],[{"Literal":{"Value":"360L"}}],[{"Literal":{"Value":"361L"}}],[{"Literal":{"Value":"362L"}}],[{"Literal":{"Value":"363L"}}],[{"Literal":{"Value":"364L"}}],[{"Literal":{"Value":"365L"}}],[{"Literal":{"Value":"366L"}}],[{"Literal":{"Value":"367L"}}],[{"Literal":{"Value":"368L"}}],[{"Literal":{"Value":"369L"}}],[{"Literal":{"Value":"370L"}}],[{"Literal":{"Value":"371L"}}],[{"Literal":{"Value":"372L"}}],[{"Literal":{"Value":"373L"}}],[{"Literal":{"Value":"374L"}}],[{"Literal":{"Value":"375L"}}],[{"Literal":{"Value":"376L"}}],[{"Literal":{"Value":"377L"}}],[{"Literal":{"Value":"378L"}}],[{"Literal":{"Value":"379L"}}],[{"Literal":{"Value":"380L"}}],[{"Literal":{"Value":"381L"}}],[{"Literal":{"Value":"382L"}}],[{"Literal":{"Value":"383L"}}],[{"Literal":{"Value":"384L"}}],[{"Literal":{"Value":"385L"}}],[{"Literal":{"Value":"386L"}}],[{"Literal":{"Value":"387L"}}],[{"Literal":{"Value":"388L"}}],[{"Literal":{"Value":"389L"}}],[{"Literal":{"Value":"390L"}}],[{"Literal":{"Value":"391L"}}],[{"Literal":{"Value":"392L"}}],[{"Literal":{"Value":"393L"}}],[{"Literal":{"Value":"394L"}}],[{"Literal":{"Value":"395L"}}],[{"Literal":{"Value":"396L"}}],[{"Literal":{"Value":"397L"}}],[{"Literal":{"Value":"398L"}}],[{"Literal":{"Value":"399L"}}],[{"Literal":{"Value":"400L"}}],[{"Literal":{"Value":"401L"}}],[{"Literal":{"Value":"402L"}}],[{"Literal":{"Value":"403L"}}],[{"Literal":{"Value":"404L"}}],[{"Literal":{"Value":"405L"}}],[{"Literal":{"Value":"406L"}}],[{"Literal":{"Value":"407L"}}],[{"Literal":{"Value":"408L"}}],[{"Literal":{"Value":"409L"}}],[{"Literal":{"Value":"410L"}}],[{"Literal":{"Value":"411L"}}],[{"Literal":{"Value":"412L"}}],[{"Literal":{"Value":"413L"}}],[{"Literal":{"Value":"414L"}}],[{"Literal":{"Value":"415L"}}],[{"Literal":{"Value":"416L"}}],[{"Literal":{"Value":"417L"}}],[{"Literal":{"Value":"418L"}}],[{"Literal":{"Value":"419L"}}],[{"Literal":{"Value":"420L"}}],[{"Literal":{"Value":"421L"}}],[{"Literal":{"Value":"422L"}}],[{"Literal":{"Value":"423L"}}],[{"Literal":{"Value":"424L"}}],[{"Literal":{"Value":"425L"}}],[{"Literal":{"Value":"426L"}}],[{"Literal":{"Value":"427L"}}],[{"Literal":{"Value":"428L"}}],[{"Literal":{"Value":"429L"}}],[{"Literal":{"Value":"430L"}}],[{"Literal":{"Value":"431L"}}],[{"Literal":{"Value":"432L"}}],[{"Literal":{"Value":"433L"}}],[{"Literal":{"Value":"434L"}}],[{"Literal":{"Value":"435L"}}],[{"Literal":{"Value":"436L"}}],[{"Literal":{"Value":"437L"}}],[{"Literal":{"Value":"438L"}}],[{"Literal":{"Value":"439L"}}],[{"Literal":{"Value":"440L"}}],[{"Literal":{"Value":"441L"}}],[{"Literal":{"Value":"442L"}}],[{"Literal":{"Value":"443L"}}],[{"Literal":{"Value":"444L"}}],[{"Literal":{"Value":"445L"}}],[{"Literal":{"Value":"446L"}}],[{"Literal":{"Value":"447L"}}],[{"Literal":{"Value":"448L"}}],[{"Literal":{"Value":"449L"}}],[{"Literal":{"Value":"450L"}}],[{"Literal":{"Value":"451L"}}],[{"Literal":{"Value":"452L"}}],[{"Literal":{"Value":"453L"}}],[{"Literal":{"Value":"454L"}}],[{"Literal":{"Value":"455L"}}],[{"Literal":{"Value":"456L"}}],[{"Literal":{"Value":"457L"}}],[{"Literal":{"Value":"458L"}}],[{"Literal":{"Value":"459L"}}],[{"Literal":{"Value":"460L"}}],[{"Literal":{"Value":"461L"}}],[{"Literal":{"Value":"462L"}}],[{"Literal":{"Value":"463L"}}],[{"Literal":{"Value":"464L"}}],[{"Literal":{"Value":"465L"}}],[{"Literal":{"Value":"466L"}}],[{"Literal":{"Value":"467L"}}],[{"Literal":{"Value":"468L"}}],[{"Literal":{"Value":"469L"}}],[{"Literal":{"Value":"470L"}}],[{"Literal":{"Value":"471L"}}],[{"Literal":{"Value":"472L"}}],[{"Literal":{"Value":"473L"}}],[{"Literal":{"Value":"474L"}}],[{"Literal":{"Value":"475L"}}],[{"Literal":{"Value":"476L"}}],[{"Literal":{"Value":"477L"}}],[{"Literal":{"Value":"478L"}}],[{"Literal":{"Value":"479L"}}],[{"Literal":{"Value":"480L"}}],[{"Literal":{"Value":"481L"}}],[{"Literal":{"Value":"482L"}}],[{"Literal":{"Value":"483L"}}],[{"Literal":{"Value":"484L"}}],[{"Literal":{"Value":"485L"}}],[{"Literal":{"Value":"486L"}}],[{"Literal":{"Value":"487L"}}],[{"Literal":{"Value":"488L"}}],[{"Literal":{"Value":"489L"}}],[{"Literal":{"Value":"490L"}}],[{"Literal":{"Value":"491L"}}],[{"Literal":{"Value":"492L"}}],[{"Literal":{"Value":"493L"}}],[{"Literal":{"Value":"494L"}}],[{"Literal":{"Value":"495L"}}],[{"Literal":{"Value":"496L"}}],[{"Literal":{"Value":"497L"}}],[{"Literal":{"Value":"498L"}}],[{"Literal":{"Value":"499L"}}],[{"Literal":{"Value":"500L"}}],[{"Literal":{"Value":"501L"}}],[{"Literal":{"Value":"502L"}}],[{"Literal":{"Value":"503L"}}],[{"Literal":{"Value":"504L"}}],[{"Literal":{"Value":"505L"}}],[{"Literal":{"Value":"506L"}}],[{"Literal":{"Value":"507L"}}],[{"Literal":{"Value":"508L"}}],[{"Literal":{"Value":"509L"}}],[{"Literal":{"Value":"510L"}}],[{"Literal":{"Value":"511L"}}],[{"Literal":{"Value":"512L"}}],[{"Literal":{"Value":"513L"}}],[{"Literal":{"Value":"514L"}}],[{"Literal":{"Value":"515L"}}],[{"Literal":{"Value":"516L"}}],[{"Literal":{"Value":"517L"}}],[{"Literal":{"Value":"518L"}}],[{"Literal":{"Value":"519L"}}],[{"Literal":{"Value":"520L"}}],[{"Literal":{"Value":"521L"}}],[{"Literal":{"Value":"522L"}}],[{"Literal":{"Value":"523L"}}],[{"Literal":{"Value":"524L"}}],[{"Literal":{"Value":"525L"}}],[{"Literal":{"Value":"526L"}}],[{"Literal":{"Value":"527L"}}],[{"Literal":{"Value":"528L"}}],[{"Literal":{"Value":"529L"}}],[{"Literal":{"Value":"530L"}}],[{"Literal":{"Value":"531L"}}],[{"Literal":{"Value":"532L"}}],[{"Literal":{"Value":"533L"}}],[{"Literal":{"Value":"534L"}}],[{"Literal":{"Value":"535L"}}],[{"Literal":{"Value":"536L"}}],[{"Literal":{"Value":"537L"}}],[{"Literal":{"Value":"538L"}}]]}}},{"DisplayName":"Other"}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProduct = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("awdw.database.windows.net", "adventureworksdw"),
+				    dbo_DimProduct = Source{[Schema="dbo",Item="DimProduct"]}[Data]
+				in
+				    dbo_DimProduct
+
