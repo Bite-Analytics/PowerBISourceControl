@@ -1,0 +1,84 @@
+table FactSalesQuota
+	lineageTag: 158c38d3-3b0d-4747-b6cd-d867ef1e288d
+
+	column SalesQuotaKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a476601b-955f-4504-92fb-3f83bcaf7641
+		summarizeBy: count
+		sourceColumn: SalesQuotaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 62b80e1e-31b1-4a28-8e84-3780fecd8fd4
+		summarizeBy: none
+		sourceColumn: EmployeeKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: f2643441-03be-4082-b7d3-d94f7be05453
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		lineageTag: c1f19a53-80f9-4cd0-b93d-f2d0558aa90a
+		summarizeBy: sum
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarQuarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 5df66149-0c48-4a2f-8f19-1f4d99a3f1b1
+		summarizeBy: sum
+		sourceColumn: CalendarQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesAmountQuota
+		dataType: decimal
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 5d25c8ec-c82e-4c4c-b295-3ae7be484066
+		summarizeBy: sum
+		sourceColumn: SalesAmountQuota
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b07f7745-1478-4eaa-9ffb-4085850efb03
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 5f988b5c-ad36-4058-aaea-627d738100b0
+			defaultHierarchy: LocalDateTable_8683ec1c-7f98-4a80-aa06-1e97e3725212.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactSalesQuota = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("awdw.database.windows.net", "adventureworksdw"),
+				    dbo_FactSalesQuota = Source{[Schema="dbo",Item="FactSalesQuota"]}[Data]
+				in
+				    dbo_FactSalesQuota
+
+	annotation PBI_ResultType = Table
+

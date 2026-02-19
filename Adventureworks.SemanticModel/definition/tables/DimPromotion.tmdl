@@ -1,0 +1,158 @@
+table DimPromotion
+	lineageTag: 7c15cf26-ad25-4bf5-9b46-17e898194167
+
+	column PromotionKey
+		dataType: int64
+		formatString: 0
+		lineageTag: aa003a05-25ff-462e-992d-7279bfb9ed89
+		summarizeBy: none
+		sourceColumn: PromotionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionAlternateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 4607d481-4d64-4793-bfd2-81c20d1b64ec
+		summarizeBy: count
+		sourceColumn: PromotionAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishPromotionName
+		dataType: string
+		lineageTag: 25a53c02-3f33-4ea8-b4e6-be21072cc85d
+		summarizeBy: none
+		sourceColumn: EnglishPromotionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpanishPromotionName
+		dataType: string
+		lineageTag: 64a43b92-3811-4811-b170-50f3bee90093
+		summarizeBy: none
+		sourceColumn: SpanishPromotionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FrenchPromotionName
+		dataType: string
+		lineageTag: 67e569fd-0a71-42e1-8311-a209c3312d8b
+		summarizeBy: none
+		sourceColumn: FrenchPromotionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountPct
+		dataType: double
+		lineageTag: 3fb900da-f51e-4bff-b105-c3fb25641eb2
+		summarizeBy: sum
+		sourceColumn: DiscountPct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EnglishPromotionType
+		dataType: string
+		lineageTag: 0f198482-9fed-4f04-b97d-08a82577def0
+		summarizeBy: none
+		sourceColumn: EnglishPromotionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpanishPromotionType
+		dataType: string
+		lineageTag: b8b451db-8543-47e6-991f-14b62b9845b0
+		summarizeBy: none
+		sourceColumn: SpanishPromotionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column FrenchPromotionType
+		dataType: string
+		lineageTag: 3f799783-99a6-4869-88a1-87d40e0aab43
+		summarizeBy: none
+		sourceColumn: FrenchPromotionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishPromotionCategory
+		dataType: string
+		lineageTag: 309f5cc5-1363-49bf-963c-bcecb9ec3631
+		summarizeBy: none
+		sourceColumn: EnglishPromotionCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpanishPromotionCategory
+		dataType: string
+		lineageTag: dfa860f9-2173-4b2f-96c5-17ba39aa3aaf
+		summarizeBy: none
+		sourceColumn: SpanishPromotionCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column FrenchPromotionCategory
+		dataType: string
+		lineageTag: 3666dbb8-ab5f-4955-b331-c49f42ed9f2c
+		summarizeBy: none
+		sourceColumn: FrenchPromotionCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3308e49c-7e61-4507-a168-dc73e745660f
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: 73b237ed-44eb-4084-ae3e-1c44a2e1c7b9
+			defaultHierarchy: LocalDateTable_103a4432-1e9d-4e5b-af26-6edc8baf1b41.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6ee24c93-0efe-4dc3-a6ec-50d9af4a7b65
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: e1487801-9107-408a-9bba-5ace0f21af59
+			defaultHierarchy: LocalDateTable_acb2b48c-e70a-4c2d-b5b4-cbc87d704046.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinQty
+		dataType: int64
+		formatString: 0
+		lineageTag: 9230f7c3-279b-41b2-b5a7-69c594dfb24d
+		summarizeBy: sum
+		sourceColumn: MinQty
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxQty
+		dataType: int64
+		formatString: 0
+		lineageTag: 513bd2fc-a73f-40ad-b956-b503f8ff9ab0
+		summarizeBy: sum
+		sourceColumn: MaxQty
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPromotion = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("awdw.database.windows.net", "adventureworksdw"),
+				    dbo_DimPromotion = Source{[Schema="dbo",Item="DimPromotion"]}[Data]
+				in
+				    dbo_DimPromotion
+
