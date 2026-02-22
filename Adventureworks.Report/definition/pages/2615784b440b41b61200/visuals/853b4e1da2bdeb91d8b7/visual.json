@@ -2,16 +2,35 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "853b4e1da2bdeb91d8b7",
   "position": {
-    "x": 231.32530120481928,
-    "y": 186.46221248630889,
+    "x": 437.41511500547648,
+    "y": 166.83461117196057,
     "z": 0,
-    "height": 300.02190580503833,
-    "width": 300.02190580503833
+    "height": 409.37568455640746,
+    "width": 572.0043811610077
   },
   "visual": {
     "visualType": "donutChart",
     "query": {
       "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimGeography"
+                    }
+                  },
+                  "Property": "EnglishCountryRegionName"
+                }
+              },
+              "queryRef": "DimGeography.EnglishCountryRegionName",
+              "nativeQueryRef": "EnglishCountryRegionName",
+              "active": true
+            }
+          ]
+        },
         "Y": {
           "projections": [
             {
