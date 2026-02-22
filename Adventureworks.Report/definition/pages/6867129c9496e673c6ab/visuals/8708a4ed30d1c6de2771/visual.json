@@ -1,46 +1,38 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "b725ecd8d0ab0b811ee6",
+  "name": "8708a4ed30d1c6de2771",
   "position": {
-    "x": 933.050108932462,
-    "y": 58.562091503267979,
-    "z": 2000,
-    "height": 538.21350762527243,
-    "width": 346.94989106753803,
-    "tabOrder": 2000
+    "x": 23.833515881708653,
+    "y": 217.30558598028477,
+    "z": 0,
+    "height": 503.30777656078862,
+    "width": 515.92552026286967
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
-                "GroupRef": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimProduct"
+                      "Entity": "DimGeography"
                     }
                   },
-                  "Property": "ProductKey (groups)",
-                  "GroupedColumns": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "DimProduct"
-                          }
-                        },
-                        "Property": "ProductKey"
-                      }
-                    }
-                  ]
+                  "Property": "EnglishCountryRegionName"
                 }
               },
-              "queryRef": "DimProduct.ProductKey (groups)",
-              "nativeQueryRef": "ProductKey (groups)"
-            },
+              "queryRef": "DimGeography.EnglishCountryRegionName",
+              "nativeQueryRef": "EnglishCountryRegionName",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -49,11 +41,11 @@
                       "Entity": "FactInternetSales"
                     }
                   },
-                  "Property": "Sales Amount"
+                  "Property": "Sales Amount Measure"
                 }
               },
-              "queryRef": "FactInternetSales.Sales Amount",
-              "nativeQueryRef": "Sales Amount"
+              "queryRef": "FactInternetSales.Sales Amount Measure",
+              "nativeQueryRef": "Sales Amount Measure"
             }
           ]
         }
@@ -68,12 +60,13 @@
                     "Entity": "FactInternetSales"
                   }
                 },
-                "Property": "Sales Amount"
+                "Property": "Sales Amount Measure"
               }
             },
             "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "drillFilterOtherVisuals": true
