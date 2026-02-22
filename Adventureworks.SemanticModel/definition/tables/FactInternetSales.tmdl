@@ -280,15 +280,6 @@ table FactInternetSales
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Sales Amount Col' = FactInternetSales[UnitPrice] * FactInternetSales[OrderQuantity]
-		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
-		lineageTag: ee82afce-9584-4852-bf2a-4a41ef0cc9c5
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
-
 	partition FactInternetSales = m
 		mode: import
 		source =
